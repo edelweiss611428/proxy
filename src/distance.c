@@ -122,7 +122,7 @@ static double canberra(double *x, double *y, int nx, int ny, int nc)
     for (j = 0 ;j < nc; j++) {
         if (both_non_NA(*x, *y)) {
             sum = fabs(*x + *y);
-            diff = fabs(*x - *y);
+            diff = fabs(*x) - fabs(*y);
             if (sum > DBL_MIN || diff > DBL_MIN) {
                 dev = diff/sum;
                 if (!ISNAN(dev) ||
